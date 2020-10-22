@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <style>
+      html {
+        height: 100%;
+      }
+      .card {
+        border-radius: 30px;
+      }
+      .container {
+        height: 100%;
+      }
+      body {
+        background-image: url("/images/bodybg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s1 m3 l3"></div>
+        <div class="col s12 m6 l6">
+          <br /><br /><br /><br />
+          <div class="card z-depth-5">
+            <div class="card-content center">
+              <span class="card-title"
+                ><h3 class="blue-text" style="font-family: candara;">
+                  GP-ATM LOGIN
+                </h3></span
+              >
+              <div class="row">
+                <form action="/login" class="col s12" method="POST">
+                  <div class="row">
+                    <div class="input-field col s11">
+                      <i class="material-icons prefix">account_circle</i>
+                      <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        class="validate"
+                      />
+                      <label for="email">Email</label>
+                      <span
+                        class="helper-text"
+                        data-error="wrong"
+                        data-success="right"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s11">
+                      <i class="material-icons prefix">security</i>
+                      <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        class="validate"
+                      />
+                      <label for="password">Password</label>
+                      <span
+                        class="helper-text"
+                        data-error="wrong"
+                        data-success="right"
+                      ></span>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="waves-effect waves-dark btn-large light-blue accent-4"
+                  >
+                    <i class="material-icons">touch_app</i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s1 m3 l3"></div>
+      </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

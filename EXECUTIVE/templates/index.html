@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executive Portal</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /*.pl {
+        padding-left: 15px !important;
+      }*/
+      .pr {
+        padding-right: 15px !important;
+      }
+      /*nav {
+        opacity: 0.6;
+        position: fixed;
+      }*/
+      .nl {
+        font-family: candara !important;
+        font-size: 200px;
+      }
+      body {
+        height: 90%;
+        margin: 0;
+        background-image: url("/static/images/bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .bgimg {
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 25px;
+      }
+
+      .topleft {
+        position: absolute;
+        top: 0;
+        left: 16px;
+      }
+
+      .bottomleft {
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+      }
+
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      hr {
+        margin: auto;
+        width: 40%;
+      }
+      .card-alert button {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: medium none;
+        color: #fff;
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        color: inherit;
+      }
+      .card-alert a {
+        color: inherit;
+        font-weight: 500;
+      }
+      .card-alert a:hover {
+        color: inherit;
+        text-decoration: underline;
+      }
+      .alert {
+        padding: 12px;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+      $(document).ready(function () {
+        $(".collapsible").collapsible();
+      });
+      $(document).ready(function () {
+        $(".card-alert > button").on("click", function () {
+          $(this).closest("div.card-alert").fadeOut("slow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper orange">
+          <a data-target="slide-out" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <a
+            href="/"
+            class="brand-logo pl"
+            style="font-family: candara; font-size: x-large;"
+            >Executive Panel</a
+          >
+          <ul id="nav-mobile" class="nl right hide-on-med-and-down">
+            <li>
+              <a href="{{url_for('unverified')}}">Show Unverified Accounts</a>
+            </li>
+            <li>
+              <a href="{{url_for('logout')}}"
+                ><i class="material-icons pr">exit_to_app</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view orange">
+          <div class="background">
+            <img src="" />
+          </div>
+          <a href="#"><img class="circle" src="/static/images/me.jpg" /></a>
+          {% for _,e in exe.items() %}
+          <a href="#"><span class="white-text name">{{e['name']}}</span></a>
+          <a href="#"><span class="white-text email">{{e['email']}}</span></a>
+          {% endfor %}
+        </div>
+      </li>
+      <li><a href="{{url_for('unverified')}}">Show Unverified Accounts</a></li>
+      <li><div class="divider"></div></li>
+      <li>
+        <a href="{{url_for('logout')}}"
+          ><i class="material-icons pr">exit_to_app</i></a
+        >
+      </li>
+    </ul>
+    {% block content %} 
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="card-alert card {{category}}">
+      <div class="card-content orange-text">
+        <strong></strong>Executive {{message}}
+      </div>
+    </div>
+    {% endfor %}
+    <div class="bgimg">
+      <div class="middle brown-text">
+        <h1><strong>WELCOME BRANCH EXECUTIVE</strong></h1>
+        {% for _,e in exe.items() %}
+        <h1><strong>{{e['name'].upper()}}</strong></h1>
+        {% endfor %}
+      </div>
+    </div>
+    {% endblock content %}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

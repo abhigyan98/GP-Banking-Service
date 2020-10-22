@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Panel</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        height: 90%;
+        margin: 0;
+      }
+      nav{
+          background-color: transparent;
+      }
+      .side{
+        background-image: url("/static/images/road.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .card{
+          border-radius: 30px;
+      }
+      .c{
+        text-align: center!important;
+        padding-right: 130px!important;
+      }
+      .card-alert button {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: medium none;
+        color: #fff;
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        color: inherit;
+      }
+      .card-alert a {
+        color: inherit;
+        font-weight: 500;
+      }
+      .card-alert a:hover {
+        color: inherit;
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".sidenav").sidenav();
+        });
+        $(document).ready(function(){
+          $('.deleteCus').click(function(){
+            if (confirm('Do you want to delete your profile?')){
+            }
+            else{
+              event.preventDefault();
+            }
+            });
+          })
+          $(document).ready(function(){
+            $('.deleteAcc').click(function(){
+              if (confirm('Do you want to delete your Account?')){
+              }
+              else{
+                event.preventDefault();
+              }
+              });
+            })
+    </script>
+  </head>
+  <body class="grey darken-4">
+    <!-- <div class="navbar-fixed"> -->
+      <nav>
+        <div class="nav-wrapper ">
+          <a data-target="slide-out" class="sidenav-trigger btn grey darken-4"
+            ><i class="material-icons">menu</i></a
+          >
+          <a
+            href="/"
+            class="brand-logo pl"
+            style="font-family: candara; font-size: x-large;">
+            <i class="material-icons">directions_walk</i>
+            Customer Panel</a
+            >
+          <ul id="nav-mobile" class="nl right hide-on-med-and-down">
+            <li><a href="{{url_for('index')}}" class="white-text" style="font-size: large!important; font-family:candara;">User Accounts</a></li>
+            <li><a href="{{url_for('index')}}" class="white-text" style="font-size: large!important; font-family:candara;">Create Account</a></li>
+            <li><a href="{{url_for('index')}}" class="white-text" style="font-size: large!important; font-family:candara;">Delete Account</a></li>
+            <li>
+              <a href="{{url_for('logout')}}"
+                ><i class="material-icons pr">exit_to_app</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- </div> -->
+    <ul id="slide-out" class="sidenav side white-text">
+      <li>
+        <div class="user-view ">
+          <div class="background">
+            <img src=""/>
+          </div>
+          <div style="padding-left: 25px;">
+            <a href="#"><img class="circle" src="/static/images/me.jpg" style="image-rendering:crisp-edges;"/></a>
+            {% for e in cus %}
+            <a href="#"><span class="white-text name"><i>{{e['name']}}</i></span></a>
+            <a href="#"><span class="white-text email"><i>{{e['email']}}</i></span></a>
+            {% endfor %}
+          </div>
+        </div>
+      </li>
+      <!-- <li><div class="divider"></div></li> -->
+      <div >
+        <li><a href="{{url_for('profile')}}"><i class="material-icons white-text" style="font-size: 50px;">person_pin</i><p class="white-text">Customer Profile</p></a></li>
+        <li><a href="{{url_for('delprofile')}}" class="deleteCus"><i class="material-icons white-text" style="font-size: 50px;">delete</i><p class="white-text">Delete Customer</p></a></li>
+        <li><a href="{{url_for('checkAccounts')}}"><i class="material-icons white-text" style="font-size: 50px;">account_balance_wallet</i><p class="white-text">Check Account</p></a></li>
+        <li><a href="{{url_for('addAccount')}}"><i class="material-icons white-text" style="font-size: 50px;">add</i><p class="white-text">Add Account</p></a></li>
+        <li><a href="{{url_for('deleteAccount')}}"><i class="material-icons white-text" style="font-size: 50px;">delete_sweep</i><p class="white-text">Delete Account</p></a></li>
+      </div>
+      <div class="container">
+      <div class="container"><br>
+      </div>
+      </div>
+      <li>
+        <a href="{{url_for('logout')}}"
+          ><i class="material-icons pr white-text" style="font-size: 50px;">exit_to_app</i></a
+        >
+      </li>
+    </ul>
+    <br>
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="card-alert card {{category}}">
+      <div class="card-content orange-text">
+        <strong></strong>Customer {{message}}
+      </div>
+      <!-- <button
+        type="button"
+        class=" orange-text"
+        data-dismiss="alert"
+        aria-label=""
+        style="font-size: xx-large;"
+      >
+       <span aria-hidden="true">×</span>
+      </button> -->
+    </div>
+    {% endfor %} 
+    {% block content %}
+    <div class="container">
+        <div class="card black center">
+            <img src="/static/images/me2.jpg" class="circle" style=" height: 120px; background-color:transparent" />
+            {% for e in cus %}
+            <div class="card-content white-text">
+                <h5 class="white-text name">{{e['name'].upper()}}</h5>
+                <p class="center" style="font-size: larger; color:slategrey"><i>{{e['status']}}</i></p><br>
+                <div class="row">
+                  <div class="col s2"></div>
+                  <div class="col s3"><a href="{{url_for('profile')}}"><i class="material-icons blue-text" style="font-size: 50px;">person_pin</i><p class="white-text">Customer</p><p class="white-text"> Profile</p></a></div>
+                  <div class="col s2"></div>
+                  <div class="col s3 "><a href="{{url_for('delprofile')}}" class="deleteCus"><i class="material-icons red-text" style="font-size: 50px;">delete</i><p class="white-text">Delete</p><p class="white-text"> Customer</p></a></div>
+                  <div class="col s2 "></div>
+                </div>
+                <div class="row">
+                  <div class="col s4 "><a href="{{url_for('checkAccounts')}}"><i class="material-icons orange-text" style="font-size: 50px;">account_balance_wallet</i><p class="white-text">Check</p><p class="white-text"> Account</p></a></div>
+                  <div class="col s4 "><a href="{{url_for('addAccount')}}"><i class="material-icons green-text" style="font-size: 50px;">add</i><p class="white-text">Add</p><p class="white-text"> Account</p></a></div>
+                  <div class="col s4 "><a href="{{url_for('deleteAccount')}}"><i class="material-icons pink-text" style="font-size: 50px;">delete_sweep</i><p class="white-text">Delete</p><p class="white-text"> Account</p></a></div>
+                </div>
+                <br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock content %}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "STATE BANK OF INDIA": [
+    {
+      "id": "e9a7972b-99c5-4081-bd99-f303d2150441",
+      "branchName": "Dalpara"
+    },
+    {
+      "id": "b1b62a65-6dbb-4b38-b64c-8a7d9146c7a0",
+      "branchName": "Panskura Station Bazar"
+    }
+  ],
+  "AXIS BANK": [
+    {
+      "id": "cd04e4b5-0035-47d7-8453-5fac9b85bf6f",
+      "branchName": "Panskura Station Bazaar"
+    }
+  ],
+  "PANJAB NATIONAL BANK": [
+    {
+      "id": "f8ac5f01-766f-41e9-af5d-019372766403",
+      "branchName": "Panskura Station Bazaar"
+    },
+    {
+      "id": "f13621e8-1c5b-48ae-b12e-f86c51432a2c",
+      "branchName": "Bhadrakali"
+    }
+  ]
+}

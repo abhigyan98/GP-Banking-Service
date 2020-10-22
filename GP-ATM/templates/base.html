@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GP-ATM</title>
+    <!-- Bootstrap CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    /> -->
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+      a {
+        text-decoration: none !important;
+      }
+      body {
+        background-image: url("/images/bodybg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+    {% block head %} {% endblock head %}
+  </head>
+  <script>
+    $(document).ready(function () {
+      $(".sidenav").sidenav();
+      $(".fixed-action-btn").floatingActionButton();
+      $(".modal").modal();
+    });
+  </script>
+  <body>
+    <div class="navbar-fixed">
+      <nav class="white-text light-blue accent-4">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo" style="padding-left: 2px;"
+            ><i class="material-icons">g_translate</i>GP-ATM</a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a class="waves-effect" href="/">Home</a></li>
+            <li>
+              <a class="waves-effect" href="/accounts">My Bank Accounts</a>
+            </li>
+            <li>
+              <a class="waves-effect" href="/transactions">My Transactions</a>
+            </li>
+            <li>
+              <a class="waves-effect" href="/logout"
+                ><i class="material-icons">exit_to_app</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="/images/sidebg2.jpg" />
+          </div>
+          <a href="/"><img class="circle" src="/images/avatar.png" /></a>
+          <a href="/"
+            ><span class="white-text name">{{ customer["name"] }}</span></a
+          >
+          <a href="/"
+            ><span class="white-text email">{{ customer["email"] }}</span></a
+          >
+        </div>
+      </li>
+      <li>
+        <a class="waves-effect" href="/">Home</a>
+      </li>
+      <li><a class="waves-effect" href="/accounts">My Bank Accounts</a></li>
+      <li><a class="waves-effect" href="/transactions">My Transactions</a></li>
+      <!-- <li><div class="divider"></div></li> -->
+      <li>
+        <a class="waves-effect" href="/logout"
+          ><i class="material-icons">input</i></a
+        >
+      </li>
+    </ul>
+    {% block body %} {% endblock body %}
+  </body>
+</html>

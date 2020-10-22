@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% block head %}
+<style>
+  .card {
+    border-radius: 30px;
+  }
+</style>
+{% endblock head %} {% block body %}
+
+<div class="container">
+  <h3 class="center white-text">My Bank Accounts</h3>
+  <div class="row">
+    <div class="col s1 m3 l3"></div>
+    <div class="col s12 m6 l6">
+      <br />
+      {% for account in (accounts | reverse) %}
+      <div class="card z-depth-5">
+        <div class="card-content">
+          <div>
+            <span class="blue-text">Account Number:</span> {{
+            account["accountNumber"] }}
+          </div>
+          <div>
+            <span class="blue-text">Bank Name:</span> {{ account["bankName"] }}
+          </div>
+          <div>
+            <span class="blue-text">Bank Address:</span> {{
+            account["bankAddress"] }}
+          </div>
+          <div>
+            <span class="blue-text">Branch Name:</span> {{ account["bankBranch"]
+            }}
+          </div>
+          <div>
+            <span class="blue-text">Bank IFSC:</span> {{ account["bankIfsc"] }}
+          </div>
+          <div>
+            <span class="blue-text">Account Type:</span> {{
+            account["accountType"] }}
+          </div>
+          <div>
+            <span class="blue-text">Current Balance:</span> {{
+            account["balance"] }}
+          </div>
+          <br /><br />
+          <div class="row center">
+            <div class="col s4">
+              <a href="/account/{{ account['accountNumber'] }}/transfer">
+                <button
+                  style="width: 100%; border-radius: 30px;"
+                  class="btn wave-effect deep-orange lighten-1"
+                >
+                  Transfer
+                </button>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="/account/{{ account['accountNumber'] }}/credit">
+                <button
+                  style="width: 100%; border-radius: 30px;"
+                  class="btn wave-effect blue darken-1"
+                >
+                  Deposit
+                </button>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="/account/{{ account['accountNumber'] }}/debit">
+                <button
+                  style="width: 100%; border-radius: 30px;"
+                  class="btn wave-effect orange"
+                >
+                  Withdraw
+                </button>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="row center">
+            <div class="col s6">
+              <a href="/account/{{ account['accountNumber'] }}/delete">
+                <button
+                  style="width: 100%; border-radius: 30px;"
+                  class="btn wave-effect red darken-1"
+                >
+                  Delete
+                </button>
+              </a>
+            </div>
+            <div class="col s6">
+              <a href="/account/{{ account['accountNumber'] }}/transfer">
+                <button
+                  style="width: 100%; border-radius: 30px;"
+                  class="btn wave-effect deep-orange lighten-1"
+                >
+                  Transfer
+                </button>
+              </a>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="col s1 m3 l3"></div>
+  </div>
+</div>
+
+{% endblock body %}

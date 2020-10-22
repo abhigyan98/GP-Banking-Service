@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block head %}
+<style>
+  .card {
+    border-radius: 30px;
+  }
+</style>
+{% endblock head %} {% block body %}
+
+<div class="container">
+  <h3 class="center white-text">My Transactions</h3>
+  <div class="row">
+    <div class="col s1 m3 l3"></div>
+    <div class="col s12 m6 l6">
+      <br />
+      {% for transaction in transactions %}
+      <div class="card z-depth-5">
+        <div class="card-content">
+          <div>
+            <span class="blue-text">Transaction Type:</span> {{
+            transaction["transactionType"] }}
+          </div>
+          <div>
+            <span class="blue-text">Account Number:</span> {{
+            transaction["accountNumber"] }}
+          </div>
+          <div>
+            <span class="blue-text">Transaction Amount:</span> {{
+            transaction["amount"] }}
+          </div>
+          <div>
+            <span class="blue-text">Balance:</span> {{
+            transaction["currentBalance"] }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="col s1 m3 l3"></div>
+  </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,146 @@
+{% extends "index.html" %} {% block content %}
+<style>
+  html {
+    height: 100%;
+    margin: 0;
+  }
+  .card {
+    text-align: left;
+    border-radius: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  strong {
+    padding-right: 15px;
+  }
+  .b{
+      border: 2px solid rgb(138, 110, 110)!important;
+  }
+  .btn{
+      border-radius: 30px;
+  }
+  .pr {
+    padding-right: 15px !important;
+  }
+  /*nav {
+    opacity: 0.6;
+    position: fixed;
+  }*/
+  .nl {
+    font-family: candara !important;
+    font-size: 200px;
+  }
+  body {
+    height: 90%;
+    margin: 0;
+    background-image: url("/static/images/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  html {
+    height: 100%;
+    margin: 0;
+  }
+  .bgimg {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+  }
+
+  .topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+  }
+
+  .bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+  }
+
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .card-alert button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    color: inherit;
+  }
+  .card-alert a {
+    color: inherit;
+    font-weight: 500;
+  }
+  .card-alert a:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .alert {
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+</style>
+<body class="">
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="container col s12">
+        <div class="row">
+          <div class="">
+            {% if unverified|length %}
+            {% for u in unverified %}
+            <div class="card b z-depth-5 center deep-orange darken-1 white-text">
+              <div class="container ">
+                <div class="row">
+                  <div class="col s12" >
+                      <br>
+                    <h6>
+                      <strong>Customer Name:</strong>{{u['customerName']}}
+                    </h6>
+                    <h6>
+                      <strong>Account Number:</strong>{{u['accountNumber']}}
+                    </h6>
+                    <h6><strong>Account Type:</strong>{{u['accountType']}}</h6>
+                  </div>
+                </div>
+                <div class="col s12">
+                  <a href="/verified/{{u['accountId']}}" class="btn right cyan" >Verify</a>
+                </div>
+              </div><br><br>
+            </div>
+            {% endfor%}
+            {% else %}
+            <div class="bgimg center">
+              <div class=" brown-text ">
+                <br><br>
+                <br><br>
+                <h1><strong>No Details To Show</strong></h1>
+              </div>
+            </div>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock content %}

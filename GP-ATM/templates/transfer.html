@@ -1,0 +1,80 @@
+{% extends "base.html" %} {% block head %}
+<style>
+  .card {
+    border-radius: 30px;
+  }
+</style>
+{% endblock head %} {% block body %}
+
+<div class="container">
+  <h3 class="center white-text">Withdraw Money</h3>
+  <div class="row">
+    <div class="col s1 m3 l3"></div>
+    <div class="col s12 m6 l6">
+      <br />
+      <div class="card z-depth-5">
+        <div class="card-content">
+          {% if account["message"] == "failure" %}
+          <div class="center">
+            <span class="red-text">No Account Found</span>
+          </div>
+          {% else %}
+          <div>
+            <span class="blue-text">Account Number:</span> {{
+            account["accountNumber"] }}
+          </div>
+          <div>
+            <span class="blue-text">Account Type:</span> {{
+            account["accountType"] }}
+          </div>
+          <div>
+            <span class="blue-text">Current Balance:</span> {{
+            account["balance"] }}
+          </div>
+          <br />
+          <div class="center">
+            {% with messages = get_flashed_messages(with_categories=true) %} {%
+            if messages %} {% for category, message in messages %}
+            <h4 class="red-text">{{ message }}</h4>
+            {% endfor %} {% endif %} {% endwith %}
+          </div>
+          <form
+            action="/account/{{ account['accountNumber'] }}/transfer"
+            method="post"
+          >
+            <div class="input-field">
+              <input
+                id="account"
+                type="text"
+                name="account"
+                class="validate"
+                required
+              />
+              <label for="account">Which account to Send?</label>
+            </div>
+            <div class="input-field">
+              <input
+                id="amount"
+                type="text"
+                name="amount"
+                class="validate"
+                required
+              />
+              <label for="amount">How much amount?</label>
+            </div>
+            <br />
+            <div class="row center">
+              <button class="btn blue card">
+                Transfer
+              </button>
+            </div>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col s1 m3 l3"></div>
+  </div>
+</div>
+
+{% endblock body %}

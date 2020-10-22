@@ -1,0 +1,240 @@
+{
+    "086d3855-4275-40e8-9e35-c63a772b0198": {
+        "transactionType": "Debit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "20",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "80"
+    },
+    "34f4ec33-4e03-4a56-86db-46083ab03d8f": {
+        "transactionType": "Credit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "200",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "260"
+    },
+    "11e02aa2-c03c-4979-b22f-523f81b6529b": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "5000",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "5000"
+    },
+    "be08fb4d-86e7-4de9-8e98-0bb8d9b90089": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "4800"
+    },
+    "cb0234d4-a0fd-4306-8aaa-8fa38b74c9a2": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "4600"
+    },
+    "5bfbe272-5308-4550-8cc0-8caee2028445": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "4400"
+    },
+    "4d6fe047-5eb8-42ba-bd19-619e9a3dfdd5": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "4200"
+    },
+    "624acbff-a5c2-49b1-b7dd-e258e7f4e3a5": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "4000"
+    },
+    "a96a2f60-6be6-419f-849b-c0f972944504": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3800"
+    },
+    "a92b1e6f-83b5-47dc-b7c1-443efe2681e9": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3600"
+    },
+    "2fe4b6f1-b702-44c5-b95d-e674f822b3e5": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3400"
+    },
+    "34ee7066-1323-41d7-a77b-5373dfc9b400": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3200"
+    },
+    "b622e2a7-7743-41f8-ba70-a10a54791a00": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3000"
+    },
+    "7e9b6855-2155-4448-8027-4d380dc2db1a": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "2800"
+    },
+    "8bb4849e-ee80-489c-8602-3a16d1a9e2d8": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "2600"
+    },
+    "d4c8b829-edea-4d39-be0a-a2b4e32bd5a9": {
+        "transactionType": "Debit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "2400"
+    },
+    "4a5326e9-5691-4e52-b789-630581d08554": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "2600"
+    },
+    "2e67fcf6-8800-42f4-ba7e-ce960d3f9513": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "2800"
+    },
+    "b1170725-9b1e-4114-a78d-f351de81691a": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3000"
+    },
+    "daf3508f-a8b4-4762-b262-7b2d8b7f02d5": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3200"
+    },
+    "758e8113-0efa-41b4-b153-9dae7fa0933f": {
+        "transactionType": "Credit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "40",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "300"
+    },
+    "6075c218-da19-47e7-a7b9-e2bb74b98dcf": {
+        "transactionType": "Debit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "20",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "280"
+    },
+    "efd9694c-228c-429c-8487-dfacc6ed3c1d": {
+        "transactionType": "Credit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "500",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "780"
+    },
+    "c36604ad-8528-4933-88aa-ec0af90c9118": {
+        "transactionType": "Debit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "80",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "700"
+    },
+    "953b5b52-331e-489b-af6f-24afc06ce937": {
+        "transactionType": "Debit",
+        "accountNumber": "SBIN0012457385",
+        "amount": "20",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "1980"
+    },
+    "e254d296-8fe0-42eb-98e4-3b4df3453e71": {
+        "transactionType": "Credit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "20",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "720"
+    },
+    "4e27ca1d-5987-43d2-9fb0-6076b7fc4c8a": {
+        "transactionType": "Debit",
+        "accountNumber": "SBIN0012457385",
+        "amount": "500",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "1480"
+    },
+    "ffe23828-a7b2-48a8-95d9-82e8d78a09f8": {
+        "transactionType": "Credit",
+        "accountNumber": "SBIN0012457963",
+        "amount": "500",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "1220"
+    },
+    "d14c3c97-8ba4-4ec7-8032-0a8f1daee8dc": {
+        "transactionType": "Debit",
+        "accountNumber": "SBIN0012457385",
+        "amount": "200",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "1280"
+    },
+    "e26ac0b0-48c3-4f9c-a3bd-730156443f71": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3400"
+    },
+    "35082c85-11a9-4dc4-b4e8-cd8657c9e39f": {
+        "transactionType": "Debit",
+        "accountNumber": "SBIN0012457385",
+        "amount": "200",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "1080"
+    },
+    "2ef30776-59aa-419f-8046-f54b8e8c121d": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "200",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "3600"
+    },
+    "2e0408c8-610b-4f1d-bfca-92611557f850": {
+        "transactionType": "Credit",
+        "accountNumber": "AXIS0012860254",
+        "amount": "1300",
+        "customerId": "3d44b1e0-0758-4dad-a47a-1e116b607a31",
+        "currentBalance": "4900"
+    },
+    "3bf16218-536e-4f77-a1de-694d83e426b4": {
+        "transactionType": "Credit",
+        "accountNumber": "PNBN12461447",
+        "amount": "5000",
+        "customerId": "90c5ef38-6445-46cd-9b4c-4885ec436027",
+        "currentBalance": "5000"
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /*.pl {
+        padding-left: 15px !important;
+      }*/
+      .pr {
+        padding-right: 15px !important;
+      }
+      nav {
+        /*opacity: 0.6;
+        position: fixed;*/
+      }
+      .nl {
+        font-family: candara !important;
+        font-size: 200px;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+      $(document).ready(function () {
+        $(".collapsible").collapsible();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper blue">
+          <a data-target="slide-out" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <a href="/" class="brand-logo pl" style="font-family: candara;"
+            >Admin Panel</a
+          >
+          <ul id="nav-mobile" class="nl right hide-on-med-and-down">
+            <li><a href="{{url_for('addBank')}}">Add Bank </a></li>
+            <li><a href="{{url_for('getBank')}}">Get Bank </a></li>
+            <li>
+              <a href="{{url_for('logout')}}"
+                ><i class="material-icons pr">exit_to_app</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <ul id="slide-out" class="sidenav">
+      <li><a href="{{url_for('addBank')}}">Add Bank </a></li>
+      <li><a href="{{url_for('getBank')}}">Get Bank </a></li>
+      <li>
+        <a href="{{url_for('logout')}}"
+          ><i class="material-icons pr">exit_to_app</i></a
+        >
+      </li>
+    </ul>
+    <!-- <img src="/images/bgimage.jpg" alt="" srcset=""> -->
+    
+    {% block content %} {% endblock content %}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

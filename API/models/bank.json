@@ -1,0 +1,42 @@
+{
+  "e9a7972b-99c5-4081-bd99-f303d2150441": {
+    "name": "State Bank of India",
+    "ifsc": "SBIN0012860",
+    "address": "Dalpara, Pankkura, Purba Medinipur, West Bengal",
+    "branch": "Dalpara",
+    "email": "mailtoabhigyan15@gmail.com",
+    "phone": "7003322548"
+  },
+  "cd04e4b5-0035-47d7-8453-5fac9b85bf6f": {
+    "name": "Axis Bank",
+    "ifsc": "AXIS0012860",
+    "address": "Kanakpur, Pankkura(R.S.), Purba Medinipur, West Bengal",
+    "branch": "Panskura Station Bazaar",
+    "email": "shouvikbajpayee.private@gmail.com",
+    "phone": "9732747001"
+  },
+  "f8ac5f01-766f-41e9-af5d-019372766403": {
+    "name": "Panjab National Bank",
+    "ifsc": "PNBN12450",
+    "address": "Kanakpur, Pankkura(R.S.), Purba Medinipur, West Bengal",
+    "branch": "Panskura Station Bazaar",
+    "email": "shouvikbajpayee.private@gmail.com",
+    "phone": "8617623168"
+  },
+  "f13621e8-1c5b-48ae-b12e-f86c51432a2c": {
+    "name": "Panjab National Bank",
+    "ifsc": "PNBN12461",
+    "address": "Uttarpara",
+    "branch": "Bhadrakali",
+    "email": "abhigyanganguly73@gmail.com",
+    "phone": "7003322548"
+  },
+  "b1b62a65-6dbb-4b38-b64c-8a7d9146c7a0": {
+    "name": "State Bank of India",
+    "ifsc": "SBIN0010505",
+    "address": "Bahargram, Panskura (R.S.), 721152",
+    "branch": "Panskura Station Bazar",
+    "email": "shouvikbajpayee15@gmail.com",
+    "phone": "9734282057"
+  }
+}

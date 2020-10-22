@@ -1,0 +1,32 @@
+{
+  "90c5ef38-6445-46cd-9b4c-4885ec436027": {
+    "name": "Shouvik Bajpayee",
+    "address": "Block A, Flat 105, Subhadra Appartment, Panskura(R.S.), Bahargram, 721152",
+    "email": "bajpayeeshouvik@gmail.com",
+    "dob": "09/02/1998",
+    "password": "1234",
+    "phone": "8617623168",
+    "status": "verified",
+    "activation": "activated"
+  },
+  "3d44b1e0-0758-4dad-a47a-1e116b607a31": {
+    "name": "Abhigyan Ganguly",
+    "address": "Uttarpara",
+    "email": "mailtoabhigyan15@gmail.com",
+    "dob": "09/02/1998",
+    "password": "1234",
+    "phone": "9734282057",
+    "status": "verified",
+    "activation": "activated"
+  },
+  "c075a41b-a815-4efa-b602-c068418c06bb": {
+    "name": "Abhigyan Ganguly",
+    "address": "35/20 DDJ",
+    "email": "abhigyanganguly73@gmail.com",
+    "dob": "15/04/1998",
+    "password": "1234",
+    "phone": "9674019452",
+    "status": "verified",
+    "activation": "activated"
+  }
+}

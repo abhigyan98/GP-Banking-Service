@@ -1,0 +1,42 @@
+{
+  "228d9fee-693d-45dc-8562-ae3fa5451c42": {
+    "name": "Shouvik Bajpayee",
+    "email": "shouvikbajpayee15@gmail.com",
+    "password": "123",
+    "employeeId": "SBIE0025",
+    "bankId": "80069b9d-2e42-42a5-9995-2c13182f51b6",
+    "status": "verified"
+  },
+  "a23ce4e0-3d8f-4dd2-8e56-45bdac905690": {
+    "name": "Abhigyan Ganguly",
+    "email": "mailtoabhigyan15@gmail.com",
+    "password": "1234",
+    "employeeId": "AXISE0032",
+    "bankId": "cd04e4b5-0035-47d7-8453-5fac9b85bf6f",
+    "status": "verified"
+  },
+  "dd851e5c-cbec-42b0-8815-36aac6a39463": {
+    "name": "Gyani Guni",
+    "email": "abhigyanganguly73@gmail.com",
+    "password": "1234",
+    "employeeId": "AXISE0030",
+    "bankId": "cd04e4b5-0035-47d7-8453-5fac9b85bf6f",
+    "status": "verified"
+  },
+  "24e249bf-b91b-4ece-9c54-c1bf1fa0d800": {
+    "name": "Piku Tiku",
+    "email": "bajpayeeshouvik@gmail.com",
+    "password": "123",
+    "employeeId": "AXISE0055",
+    "bankId": "cd04e4b5-0035-47d7-8453-5fac9b85bf6f",
+    "status": "verified"
+  },
+  "3eee4cf1-a3b4-4307-86d6-a0b1af289e6b": {
+    "name": "Shouvik Bajpayee",
+    "email": "shouvikbajpayee15@gmail.com",
+    "password": "1234",
+    "employeeId": "SBIE1101",
+    "bankId": "b1b62a65-6dbb-4b38-b64c-8a7d9146c7a0",
+    "status": "verified"
+  }
+}

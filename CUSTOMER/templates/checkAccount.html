@@ -1,0 +1,83 @@
+{% extends 'index.html' %} {% block content %}
+<div class="container">
+  {% for a,c in total: %}
+  <div class="card {{c}}">
+    <div class="card-content white-text">
+      <div class="row">
+        <div class="row">
+          <div class="col s4">
+            <p class="left white-text" style="font-size: 16px;">
+              <strong>Account No:</strong>
+            </p>
+          </div>
+          <div class="col s8">
+            <p class="left" style="font-size: 16px;">
+              <i>{{a['accountNumber']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s4" style="font-size: 16px;">
+            <p class="left">
+              <strong>Account Type:</strong>
+            </p>
+          </div>
+          <div class="col s8" style="font-size: 16px;">
+            <p class="left">
+              <i>{{a['accountType']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <!-- ####################### -->
+        <div class="row">
+          <div class="col s4" style="font-size: 16px;">
+            <p class="left white-text">
+              <strong>Bank Name:</strong>
+            </p>
+          </div>
+          <div class="col s8" style="font-size: 16px;">
+            <p class="left">
+              <i>{{a['bankName']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s4" style="font-size: 16px;">
+            <p class="left white-text">
+              <strong>Bank IFSC:</strong>
+            </p>
+          </div>
+          <div class="col s8" style="font-size: 16px;">
+            <p class="left">
+              <i>{{a['bankIfsc']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s4" style="font-size: 16px;">
+            <p class="left white-text">
+              <strong>Bank Branch:</strong>
+            </p>
+          </div>
+          <div class="col s8" style="font-size: 16px;">
+            <p class="left">
+              <i>{{a['bankBranch']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <!-- <div class="col s12"><br>
+            <p class="center" style="font-size: 18px;">
+              <i>{{a['activation']}}</i>
+            </p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Portal</title>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <style>
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+      input:-webkit-autofill:active  {
+          -webkit-box-shadow: 0 0 0 30px black inset !important;
+      }
+      input:-webkit-autofill {
+        -webkit-text-fill-color: white !important;
+      }
+      html {
+        height: 100%;
+        
+      }
+      .card {
+        border-radius: 30px;
+      }
+      .container {
+        height: 100%;
+      }
+      .bdiv {
+        border: 0px solid black !important;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+      }
+      .white {
+        opacity: 0.9;
+      }
+      .z-depth-5 {
+        box-shadow: 0px 2px 2px 1px slategray;
+      }
+      .z-depth-4 {
+        box-shadow: 0px 1px 2px 4px slategray;
+      }
+      .card-alert button {
+        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+        border: medium none;
+        color: #fff;
+        font-size: 20px;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        color: inherit;
+      }
+      .card-alert a {
+        color: inherit;
+        font-weight: 500;
+      }
+      .card-alert a:hover {
+        color: inherit;
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $(".card-alert > button").on("click", function () {
+          $(this).closest("div.card-alert").fadeOut("slow");
+        });
+      });
+      $(document).ready(function () {
+        $("#signup").hide();
+        $("#su").click(function () {
+          $("#si").removeClass("active");
+          $(this).addClass("active");
+          $("#signin").hide();
+          $("#signup").fadeIn();
+        });
+        $("#si").click(function () {
+          $("#su").removeClass("active");
+          $(this).addClass("active");
+          $("#signup").hide();
+          $("#signin").fadeIn();
+        });
+      });
+      $(document).ready(function () {
+        $("select").formSelect();
+      });
+      $(document).ready(function(){
+        $('.datepicker').datepicker({
+          yearRange: 50, // Creates a dropdown of 15 years to control year
+          format: 'dd/mm/yyyy'
+        });
+      });
+    </script>
+  </head>
+  <body class="black">
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="card-alert card {{category}}">
+      <div class="card-content orange-text">
+        <strong>Warning! </strong>Customer {{message}}
+      </div>
+      <button
+        type="button"
+        class="close orange-text"
+        data-dismiss="alert"
+        aria-label="Close"
+        style="font-size: xx-large;"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    {% endfor %} 
+    <div class="container">
+      <div class="row">
+        <div class="col s1 m3 l3"></div>
+        <div class="col s12 m6 l6">
+          <br /><br /><br /><br />
+          <div class="card z-depth-5 black">
+            <div class="col s12 z-depth-0 bdiv center deep-red white-text">
+              <div class="col s6">
+                <button
+                  class="btn-large center black white-text purple-text active z-depth-0"
+                  id="si"
+                  style="font-family: candara; font-weight: bold;"
+                >
+                  Sign In
+                </button>
+              </div>
+              <div class="col s6">
+                <button
+                  class="btn-large center black white-text purple-text z-depth-0"
+                  id="su"
+                  style="font-family: candara; font-weight: bold;"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </div>
+            <div class="card-content center">
+              <!--Signin-->
+
+              <div id="signin">
+                <br />
+                <img
+                  src="/static/images/me.jpg"
+                  alt=""
+                  style=" height: 120px;"
+                />
+                <div class="row">
+                  
+                  <form
+                    action="{{url_for('enter')}}"
+                    class="col s12 "
+                    method="POST"
+                    autocomplete="off"
+                  >
+                    <div class="row">
+                      <div class="input-field col s11">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input
+                          id="inemail"
+                          type="email"
+                          name="inemail"
+                          class="validate white-text"
+                          style="background-color:black"
+                        />
+                        <label for="inemail">Email ID</label>
+                        <span
+                          class="helper-text"
+                          data-error="wrong"
+                          data-success="right"
+                        ></span>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="input-field col s11">
+                        <i class="material-icons prefix">security</i>
+                        <input
+                          id="inpassword"
+                          type="password"
+                          name="inpassword"
+                          class="validate white-text"
+                          style="background-color:black"
+                        />
+                        <label for="inpassword">Password</label>
+                        <span
+                          class="helper-text"
+                          data-error="wrong"
+                          data-success="right"
+                        ></span>
+                      </div>
+                    </div>
+                    <button
+                      type="submit"
+                      class="waves-effect waves-dark btn-large blue lighten-1 lighten-1"
+                    >
+                      <i class="material-icons">touch_app</i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <!--Signup-->
+
+              <div id="signup">
+                <br />
+                <img
+                  class="circle z-depth-4"
+                  src="/static/images/signup.png"
+                  alt=""
+                  style="widows: 80px; height: 80px;"
+                />
+                <div class="row">
+                  <form
+                    action="{{url_for('register')}}"
+                    class="col s12"
+                    method="POST"
+                    autocomplete="off"
+                  >
+                    <div class="row">
+                      <div class="input-field col s11">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input
+                          id="name"
+                          type="text"
+                          name="name"
+                          class="validate white-text"
+                          autocomplete="off"
+                        />
+                        <label for="name">Name</label>
+                        <span
+                          class="helper-text"
+                          data-error="Please Write Full Name"
+                          data-success="Perfect"
+                        ></span>
+                      </div>
+                    <!-- </div>-->
+
+                      <div class="input-field col s11">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input
+                          id="address"
+                          type="text"
+                          name="address"
+                          class="validate white-text"
+                          autocomplete="off"
+                        />
+                        <label for="address">Address</label>
+                        <span
+                          class="helper-text"
+                          data-error="Please Write Full Name"
+                          data-success="Perfect"
+                        ></span>
+                      </div>
+
+                    <!--<div class="row"> -->
+                      <div class="input-field col s11 ">
+                        <i class="material-icons prefix">email</i>
+                        <input
+                          id="email"
+                          type="email"
+                          name="email"
+                          class="validate white-text"
+                          autocomplete="off"
+                        />
+                        <label for="email">Email</label>
+                        <span
+                          class="helper-text"
+                          data-error="Error"
+                          data-success="Perfect"
+                        ></span>
+                      </div>
+                    <!-- </div>
+
+                    <div class="row"> -->
+                      <div class="input-field col s11">
+                        <i class="material-icons prefix">security</i>
+                        <input
+                          id="password"
+                          type="password"
+                          name="password"
+                          class="validate white-text"
+                          minlength="4"
+                        />
+                        <label for="password">Password</label>
+                        <span
+                          class="helper-text"
+                          data-error="Minimum length 4"
+                          data-success="Perfect"
+                        ></span>
+                      </div>
+                    <!-- </div>
+
+                    <div class="row"> -->
+                      <div class="input-field col s11">
+                        <i class="material-icons prefix">date_range</i>
+                        <input type="text" name="dob" class="datepicker white-text">
+                        <label for="empid">Date Of Birth</label>
+                        <span
+                          class="helper-text"
+                          data-error="wrong"
+                          data-success="right"
+                        ></span>
+                      </div>
+                    
+                    
+                    <div class="input-field col s11">
+                      <i class="material-icons prefix">phone</i>
+                      <input
+                        id="phone"
+                        type="text"
+                        name="phone"
+                        class="validate white-text"
+                        minlength="4"
+                      />
+                      <label for="phone">Mobile No</label>
+                      <span
+                        class="helper-text"
+                        data-error="Minimum length 10"
+                        data-success="Perfect"
+                      ></span>
+                    </div>
+                  </div>
+                    <!--  -->
+
+                    <button
+                      type="submit"
+                      class="waves-effect waves-dark btn-large black z-depth-4"
+                    >
+                      <i class="material-icons">touch_app</i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s1 m3 l3"></div>
+      </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+{% extends "index.html" %} {% block content %}
+<script>
+  $("#address").val("text");
+  M.textareaAutoResize($("#address"));
+</script>
+<style>
+  .p {
+    padding-left: 15px;
+  }
+  .i {
+    font-size: 30px;
+  }
+  .alert {
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+</style>
+<body class="blue lighten-5">
+  <div class="container">
+    <br />
+    {% for category, message in get_flashed_messages(with_categories=True) %}
+    <div class="alert alert-{{category}} center teal lighten-3">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="container">
+    <h4 class="left indigo-text p">
+      <i class="material-icons i">mode_edit</i>Add Bank Details:
+    </h4>
+    <div class="row">
+      <form class="col s12" action="{{url_for('registerBank')}}" method="POST">
+        <div class="row">
+          <br />
+          <div class="input-field col s12 l6">
+            <input
+              id="bank_name"
+              type="text"
+              name="name"
+              class="validate"
+              required
+            />
+            <label for="bank_name">Bank Name</label>
+            <span
+              class="helper-text"
+              data-error="bank name required"
+              data-success="right"
+            ></span>
+          </div>
+          <div class="input-field col s12 l6">
+            <input
+              id="ifsc"
+              type="text"
+              name="ifsc"
+              class="validate"
+              required
+            />
+            <label for="ifsc">IFSC Code</label>
+            <span
+              class="helper-text"
+              data-error="IFSC required"
+              data-success="right"
+            ></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 l8">
+            <textarea
+              id="address"
+              name="address"
+              class="materialize-textarea validate"
+              required
+            ></textarea>
+            <label for="address">Address</label>
+            <span
+              class="helper-text"
+              data-error="Address required"
+              data-success="right"
+            ></span>
+          </div>
+          <div class="input-field col s12 l4">
+            <input
+              id="branch"
+              type="text"
+              name="branch"
+              class="validate"
+              required
+            />
+            <label for="branch">Branch</label>
+            <span
+              class="helper-text"
+              data-error="Branch required"
+              data-success="right"
+            ></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 l6">
+            <input
+              id="email"
+              type="email"
+              name="bemail"
+              class="validate"
+              required
+            />
+            <label for="email">Email</label>
+            <span
+              class="helper-text"
+              data-error="wrong"
+              data-success="right"
+            ></span>
+          </div>
+          <div class="input-field col s12 l6">
+            <input
+              id="phone"
+              type="text"
+              name="phone"
+              class="validate"
+              required
+            />
+            <label for="phone">Phone No</label>
+            <span
+              class="helper-text"
+              data-error="phone no required"
+              data-success="right"
+            ></span>
+          </div>
+        </div>
+        <div class="center">
+          <button type="submit" class="waves-effect waves-dark btn-large blue">
+            <i class="material-icons">done_all</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+{% endblock content %}

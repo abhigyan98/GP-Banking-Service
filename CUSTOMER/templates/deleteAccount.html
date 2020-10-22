@@ -1,0 +1,79 @@
+{% extends 'index.html' %} {% block content %}
+<style>
+  .circle {
+    border-radius: 50px;
+  }
+</style>
+<div class="container">
+  {% for a,c,id in total: %}
+  <div class="card {{c}}">
+    <div class="card-content white-text">
+      <div class="row">
+        <div class="row">
+          <div class="col s5">
+            <p class="left white-text" style="font-size: 16px;">
+              <strong>Account No:</strong>
+            </p>
+          </div>
+          <div class="col s7">
+            <p class="left" style="font-size: 16px;">
+              <i>{{a['accountNumber']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s5">
+            <p class="left" style="font-size: 16px;">
+              <strong>Account Type:</strong>
+            </p>
+          </div>
+          <div class="col s7">
+            <p class="left" style="font-size: 16px;">
+              <i>{{a['accountType']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s5">
+            <p class="left white-text" style="font-size: 16px;">
+              <strong>Bank Name:</strong>
+            </p>
+          </div>
+          <div class="col s7">
+            <p class="left" style="font-size: 16px;">
+              <i>{{a['bankName']}}</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s5">
+            <p class="left white-text" style="font-size: 16px;">
+              <strong>Bank Branch:</strong>
+            </p>
+          </div>
+          <div class="col s7">
+            <p class="left" style="font-size: 16px;">
+              <i>{{a['bankBranch']}}</i><br />
+            </p>
+          </div>
+        </div>
+        <!-- ####################### -->
+        <div class="container">
+          <form action="/delAccount/{{id}}" method="post">
+            <button
+              type="submit"
+              class="right btn red white-text circle deleteAcc"
+            >
+              <i class="material-icons">delete_sweep</i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

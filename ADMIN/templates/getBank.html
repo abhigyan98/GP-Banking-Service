@@ -1,0 +1,38 @@
+{% extends "index.html" %} {% block content %}
+<style>
+  .card{
+    text-align: left;
+    border-radius: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+  }
+  strong{
+    padding-right: 15px;
+  }
+  
+</style>
+<body class="blue lighten-4">
+  <div class="container ">
+    <div class="row">
+      <div class="container col s12">
+        <div class="row">
+          <div class="col s12">
+            {% for bank in banks %}
+            <div class="card z-depth-3 center">
+              <div class="container" >
+                <h6><strong>Bank Name: </strong>{{bank['name']}}</h6>
+                <h6><strong>Bank Phone: </strong>{{bank['phone']}}</h6>
+                <h6><strong>Bank Email: </strong>{{bank['email']}}</h6>
+                <h6><strong>Bank Address: </strong>{{bank['address']}}</h6>
+                <h6><strong>Bank Branch: </strong>{{bank['branch']}}</h6>
+              </div>
+            </div>
+            {% endfor%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock content %}

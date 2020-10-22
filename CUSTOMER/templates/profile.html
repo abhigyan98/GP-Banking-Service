@@ -1,0 +1,53 @@
+{% extends 'index.html' %} {% block content %}
+<div class="container">
+  {% for e,c in total %}
+  <div class="card black center">
+    <br />
+    <img src="/static/images/me.jpg" alt="" style="height: 150px;" />
+    <div class="row">
+      <div class="col s4">
+        <p class="left teal-text" style="font-size: 16px;">NAME:</p>
+      </div>
+      <div class="col s8">
+        <p class="left red-text" style="font-size: 16px;">
+          <i>{{e['name'].upper()}}</i>
+        </p>
+      </div>
+      <div class="col s4">
+        <p class="left indigo-text" style="font-size: 16px;">Email:</p>
+      </div>
+      <div class="col s8">
+        <p class="left grey-text" style="font-size: 16px;">
+          <i>{{e['email']}}</i>
+        </p>
+      </div>
+      <div class="col s4">
+        <p class="left orange-text" style="font-size: 16px;">ADDRESS:</p>
+      </div>
+      <div class="col s8">
+        <p class="left cyan-text" style="font-size: 16px;">
+          <i>{{e['address'].upper()}}</i>
+        </p>
+      </div>
+      <div class="col s4">
+        <p class="left red-text" style="font-size: 16px;">DOB:</p>
+      </div>
+      <div class="col s8">
+        <p class="left green-text" style="font-size: 16px;">
+          <i>{{e['dob']}}</i>
+        </p>
+      </div>
+      <div class="col s4">
+        <p class="left amber-text" style="font-size: 14px;">PHONE:</p>
+      </div>
+      <div class="col s8">
+        <p class="left lime-text" style="font-size: 14px;">
+          <i>{{e['phone']}}</i><br /><br />
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

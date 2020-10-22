@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block head %}
+<style>
+  .card {
+    border-radius: 30px;
+  }
+</style>
+{% endblock head %} {% block body %}
+
+<div class="container">
+  <h3 class="center white-text">Welcome</h3>
+  <div class="row">
+    <div class="col s1 m3 l3"></div>
+    <div class="col s12 m6 l6">
+      <br />
+      <div class="card z-depth-5">
+        <div class="card-content center">
+          <img src="/images/avatar.jpeg" alt="profile" />
+          <span class="card-title"
+            ><h3 class="blue-text" style="font-family: candara;">
+              {{ customer["name"] }}
+            </h3></span
+          >
+          <div class="row">
+            <h5 class="blue-text">Email</h5>
+            <div class="row">
+              {{ customer["email"] }}
+            </div>
+            <h5 class="blue-text">Address</h5>
+            <div class="row">
+              {{ customer["address"] }}
+            </div>
+            <h5 class="blue-text">Phone Number</h5>
+            <div class="row">
+              {{ customer["phone"] }}
+            </div>
+            <h5 class="blue-text">Date Of Birth</h5>
+            <div class="row">
+              {{ customer["dob"] }}
+            </div>
+            <h5 class="blue-text">Verification Status</h5>
+            <div class="row">
+              {{ customer["status"] }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s1 m3 l3"></div>
+  </div>
+</div>
+
+{% endblock body %}

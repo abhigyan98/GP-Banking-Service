@@ -1,0 +1,70 @@
+{% extends 'index.html' %} {% block content %}
+<style>
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px black inset !important;
+  }
+  input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+  }
+  .circle{
+      border-radius: 50px;
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    $("select").formSelect();
+  });
+</script>
+<div class="container">
+  <br /><br />
+  <div class="card">
+    <form action="{{url_for('registerAccount')}}" method="post">
+      <div class="card-content center">
+        <div class="row">
+          <div class="input-field col s12">
+            <img
+              src="/static/images/addAccount.jpg"
+              alt=""
+              style="height: 120px;"
+            />
+          </div>
+          <div class="input-field col s12">
+            <select name="branch" class="white-text">
+              <option value="" class="white-text" disabled selected
+                >Choose Bank Account</option
+              >
+              {% for key,values in branches.items() %}
+              <optgroup name="branch" label="{{key}}">
+                {% for value in values %}
+                <option value="{{value['id']}}">{{value['branchName']}}</option>
+                {% endfor %}
+              </optgroup>
+              {% endfor %}
+            </select>
+            <label>Select Bank</label>
+          </div>
+
+          <div class="input-field col s12">
+            <select name="accType">
+              <option value="" disabled selected
+                >Choose your Account Type</option
+              >
+              <option value="Fixed">Fixed Account</option>
+              <option value="Current">Current Account</option>
+              <option value="Savings">Savings Account</option>
+            </select>
+            <label>Account Type</label>
+          </div>
+
+          <div class="input-field col s12">
+              <button type="submit" class="waves-effect waves-dark btn-large green lighten-1 lighten-1 circle"><i class="material-icons">touch_app</i></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
